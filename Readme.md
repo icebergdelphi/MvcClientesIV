@@ -3,7 +3,7 @@ Ejemplo del uso de reportes en Extjs con Ireports, y el uso dinamico del TreePan
 
 Example using reports with Extjs and Ireports, and the dynamic use of the TreePanel, besides a searching grid using the Select Search.js plugin.
 
-Read LEEME.DOC to configure Javabridg with PHP and Tomcat to execute the reports made it with Ireports.
+Read LEEME.DOC to configure Javabridge with PHP and Tomcat to execute the reports made it with Ireports.
 
 User and passwords:
 
