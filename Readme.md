@@ -1,5 +1,5 @@
 #Instrucciones de uso/ How to use this example
-jemplo del uso de reportes en Extjs con Ireports, y el uso dinamico del TreePanel, ademas de una busqueda por grid con el plugin SelectSearch.js.
+Ejemplo del uso de reportes en Extjs con Ireports, y el uso dinamico del TreePanel, ademas de una busqueda por grid con el plugin SelectSearch.js.
 
 Example using reports with Extjs and Ireports, and the dynamic use of the TreePanel, besides a searching grid using the Select Search.js plugin.
 
