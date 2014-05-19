@@ -1,0 +1,103 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "designer|userClassName": "clientes.Clientes",
+        "model": "clientes.Clientes",
+        "storeId": "clientes.Clientes"
+    },
+    "designerId": "df9caabf-bfb0-47ab-8b49-5fa8cd0f4d4c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "actionMethods": [
+                    "{\r",
+                    "    read:'POST'\r",
+                    "}"
+                ],
+                "api": [
+                    "{\r",
+                    "    read    : \"controller_clientes/readClientes\",\r",
+                    "    create  : \"controller_clientes/insertClientes\",\r",
+                    "    update  : \"controller_clientes/updateClientes\",\r",
+                    "    destroy : \"controller_clientes/deleteClientes\"\r",
+                    "    \r",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "actionMethods": "object"
+            },
+            "designerId": "448922ee-b4bf-4883-b962-b7e1bdc1c409",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "actionMethods",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "record": null,
+                        "root": "data"
+                    },
+                    "designerId": "1ba10d25-32f7-4c55-8f88-2fa4c0b71b8c"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "16df3eed-8ab5-4028-acc9-33d352da85c6"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onAjaxException",
+                        "implHandler": [
+                            "Ext.MessageBox.show({\r",
+                            "    title: 'ERROR',\r",
+                            "    msg: operation.getError(),\r",
+                            "    icon: Ext.MessageBox.ERROR,\r",
+                            "    buttons: Ext.Msg.OK\r",
+                            "});"
+                        ],
+                        "name": "exception",
+                        "scope": "me"
+                    },
+                    "designerId": "13f7b365-8c0b-48ed-9d41-e56ebffe37d8"
+                }
+            ]
+        }
+    ]
+}

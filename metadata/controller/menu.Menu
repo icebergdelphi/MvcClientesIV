@@ -1,0 +1,113 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "menu.Menu",
+        "models": [
+            "menu.Item",
+            "menu.Root"
+        ],
+        "stores": [
+            "menu.Menu"
+        ]
+    },
+    "designerId": "756bb52b-6931-4bbc-b690-bd49d9ba7682",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "tabPanelMain",
+                "selector": "#tabPanelMain"
+            },
+            "designerId": "0e90e2f0-204c-487a-b20e-b694c82c7db4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#menuPanel",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelRender",
+                "implHandler": [
+                    "var menuPanel =Ext.ComponentQuery.query('panel#menuPanel')[0];\r",
+                    "this.getMenuMenuStore().load(function(records, op, success){\r",
+                    "    Ext.each(records, function(root){\r",
+                    "            var menu = Ext.create('MvcClientesIV.view.menu.Item',{\r",
+                    "            title: root.get('text'),\r",
+                    "            iconCls: root.get('iconCls')\r",
+                    "        });\r",
+                    "\r",
+                    "        Ext.each(root.raw.items, function(itens){\r",
+                    "            Ext.each(itens, function(item){\r",
+                    "                    menu.getRootNode().appendChild({\r",
+                    "                    text: item.text,\r",
+                    "                    leaf: true,\r",
+                    "                    iconCls: item.iconCls,\r",
+                    "                    id: item.id,\r",
+                    "                    className: item.className\r",
+                    "                });\r",
+                    "            });\r",
+                    "        });\r",
+                    "\r",
+                    "        menuPanel.add(menu);\r",
+                    "\r",
+                    "\r",
+                    "    });\r",
+                    "\r",
+                    "});"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "251d495b-f5cb-4362-96eb-75be04d07998"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainmenuitem",
+                "designer|targetType": "Ext.tree.Panel",
+                "fn": "onTreePanelItemSelect",
+                "implHandler": [
+                    "var mainPanel = this.getTabPanelMain();\r",
+                    "var newTab = mainPanel.items.findBy(\r",
+                    "    function (tab){\r",
+                    "        return tab.title === record.get('text');\r",
+                    "    });\r",
+                    "\r",
+                    "if (!newTab){\r",
+                    "    newTab = mainPanel.add({\r",
+                    "        xtype: record.raw.className,\r",
+                    "        closable: true,\r",
+                    "        iconCls: record.get('iconCls'),\r",
+                    "        title: record.get('text')\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "mainPanel.setActiveTab(newTab);\r",
+                    ""
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "designerId": "74e13eed-3be4-42b3-86ea-5d74ad428166"
+        }
+    ]
+}

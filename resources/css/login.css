@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+* { margin: 0; padding: 0; }
+
+body {
+	
+	font-family: 'Brush Script MT', Brush Script MT;
+	}
+	form {
+	margin-left: 8px;
+	padding: 16px 16px 40px 16px;
+	font-weight: normal;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	background-image:url('../images/user2.png')!important;
+	background-repeat: no-repeat;
+	background-position: top right;
+	border-radius: 5px;
+	border: 1px solid #e5e5e5;
+	-moz-box-shadow: rgba(400,400,400,1) 0 10px 18px;
+	-webkit-box-shadow: rgba(400,400,400,1) 0 10px 18px;
+	-khtml-box-shadow: rgba(400,400,400,1) 0 10px 18px;
+	box-shadow: rgba(400,400,400,1) 0 10px 18px;
+}
+
+form .forgetmenot { font-weight: normal; float: left; margin-bottom: 0; }
+
+#login form .submit input {
+	font-family: 'Brush Script MT', Brush Script MT;
+	padding: 3px 10px;
+	border: none;
+	font-size: 20px;
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	cursor: pointer;
+	text-decoration: none;
+	margin-top: -3px;
+	text-shadow: rgba(0,0,0,0.3) 0 -1px 0;
+}
+
+#login form p {
+	margin-bottom: 0;
+}
+
+label {
+	color: white;
+	font-size: 30px;
+}
+
+form .forgetmenot label {
+	font-size: 11px;
+	line-height: 25px;
+}
+
+form .submit { float: right; }
+
+form p { margin-bottom: 24px; }
+
+
+
+#nav {
+	text-shadow: rgba(255,255,255,1) 0 1px 0;
+}
+
+#backtoblog a {
+	position: absolute;
+	top: 7px;
+	left: 15px;
+	text-decoration: none;
+}
+
+#login { width: 350px; margin: 7em auto; }
+
+#login_error, .message {
+	font-family: "Bell MT", Bell MT;
+	margin: 0 0 4px 4px;
+	border-width: 1px;
+	border-style: solid;
+	padding: 18px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 8px;
+	
+	}
+
+/*#nav { margin: 0 0 0 8px; padding: 166px; }*/
+
+#user_pass, #user_login, #user_email {
+	font-family: "Bell MT", Bell MT;
+	font-size: 24px;
+	width: 97%;
+	padding: 3px;
+	margin-top: 2px;
+	margin-right: 6px;
+	margin-bottom: 16px;
+	border: 1px solid  #e5e5e5;
+	background: #e5e5e5;
+	
+}

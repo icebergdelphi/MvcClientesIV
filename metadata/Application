@@ -1,0 +1,59 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "menu.Menu",
+            "clientes.Clientes"
+        ],
+        "name": "MvcClientesIV",
+        "requires": [
+            "Ext.ux.grid.SelectSearch",
+            "MvcClientesIV.util.SessionMonitor"
+        ],
+        "views": [
+            "MainView",
+            "clientes.gridClientes",
+            "clientes.Captura",
+            "menu.Item"
+        ]
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "Ext.Loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "enabled": true,
+                "paths": [
+                    "{Ext: 'ext/src'}"
+                ]
+            },
+            "designerId": "527d8648-7dd8-4d45-a769-21f53382522e"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "/*Si descomentas esta lina, comenzara el monitoreo de seseion*/\r",
+                    "//MvcClientesIV.util.SessionMonitor.start();"
+                ]
+            },
+            "designerId": "aec7923e-67b9-4853-9264-6ecd155afb94"
+        }
+    ]
+}

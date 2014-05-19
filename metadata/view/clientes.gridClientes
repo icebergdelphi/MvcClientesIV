@@ -1,0 +1,268 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gridClientes",
+        "designer|userClassName": "clientes.gridClientes",
+        "height": 250,
+        "itemId": "gridClientes",
+        "store": "clientes.Clientes",
+        "title": null,
+        "width": 400
+    },
+    "designerId": "1ee8d06e-f15c-4601-a6bc-1197be5869a1",
+    "cn": [
+        {
+            "type": "Ext.grid.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "e2da1f38-f6fc-4d8a-bb98-76dce0e24cd3"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "idcliente",
+                "hidden": true,
+                "text": "Idcliente"
+            },
+            "designerId": "337d84ec-fb1e-432a-abb1-cb609850a3f3"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "Cliente",
+                "flex": 1,
+                "text": "Cliente"
+            },
+            "designerId": "1a9a1d5c-a748-4053-bddc-d2960a30e979"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "Sexo",
+                "flex": 1,
+                "text": "Sexo"
+            },
+            "designerId": "e18599ed-a746-427a-b7f3-728c676df304"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "Edad",
+                "flex": 1,
+                "format": "0",
+                "text": "Edad"
+            },
+            "designerId": "8de311a4-9f22-4a1f-b67c-bc5904b941ca"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "id_limitecredito",
+                "flex": 1,
+                "text": "Limite credito"
+            },
+            "designerId": "e183dadd-e5a8-49a4-8e02-59290ea97071",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "if(value) {\r",
+                            "    var storeLimiteCredito =Ext.getStore('catalogos.LimiteCredito');\r",
+                            "    var vRecord = storeLimiteCredito.findRecord('idlimite', value);\r",
+                            "    return vRecord ? vRecord.get('descripcion'): vRecord.get('idlimite');\r",
+                            "}\r",
+                            "else {\r",
+                            "    return \"\";\r",
+                            "    \r",
+                            "}"
+                        ]
+                    },
+                    "designerId": "1bf78a6e-cae9-43f2-8a52-1575233a134a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "mytoolbar"
+            },
+            "designerId": "d2e4086d-0a29-4d3a-9b5d-941d6f21d167",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "add",
+                        "itemId": "btnAdd",
+                        "layout|flex": null,
+                        "text": "Agregar"
+                    },
+                    "designerId": "6eaa01ff-233f-4a47-88c9-9600a6bdb7d4"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "edit",
+                        "itemId": "btnEdit",
+                        "layout|flex": null,
+                        "text": "Editar"
+                    },
+                    "designerId": "67c2a6e4-8fc5-4600-838a-05ae0096003e"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "iconCls": "delete",
+                        "itemId": "btnDelete",
+                        "layout|flex": null,
+                        "text": "Eliminar"
+                    },
+                    "designerId": "726feec8-c874-46a4-9294-c65e0fa49e76"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Paging",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayInfo": true,
+                "dock": "bottom",
+                "store": "clientes.Clientes",
+                "width": 360
+            },
+            "designerId": "71075cb8-7cc1-46f4-a827-1a64ebd5f174",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "e75e6952-787a-4271-bf3b-1db6c8cfac3b"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "imprimir",
+                        "itemId": "btnImprimir",
+                        "layout|flex": null,
+                        "text": "Imprimir"
+                    },
+                    "designerId": "8ad8ecca-8ad0-4447-854e-3a41b8695111"
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "ee17c09b-d7db-4386-ac03-a91bd11c6665"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridClientesSelectionChange",
+                "implHandler": [
+                    "this.down('#btnDelete').setDisabled(!selected.length);//Se Habilita el Boton Delete"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "designerId": "7cd8f735-89d9-440b-9cbb-16649a5820eb"
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "clientes.Clientes"
+    },
+    "designerId": "f187b44f-7394-4960-8111-6701a0a717ff",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idcliente",
+                "type": null
+            },
+            "designerId": "46e3c38f-1424-482b-9420-f05507d2a928"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Cliente"
+            },
+            "designerId": "c02c8265-2988-4113-aa66-c28d51f60ff6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Sexo"
+            },
+            "designerId": "82da229d-e2e7-489a-9c9f-f732b1b09f83"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Edad",
+                "type": "int"
+            },
+            "designerId": "261ae3ca-71e2-4988-9f80-bf0025cbbeaa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id_limitecredito",
+                "type": null
+            },
+            "designerId": "05560b64-35c2-4f55-8446-b082c2cb87c1"
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "validationClientes",
+                "field": "Cliente"
+            },
+            "designerId": "38cd90a3-4ede-4eaa-83de-6607c826e273"
+        }
+    ]
+}

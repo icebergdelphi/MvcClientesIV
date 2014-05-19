@@ -1,0 +1,65 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "menu.Menu",
+        "model": "menu.Root",
+        "storeId": "menu.Menu"
+    },
+    "designerId": "1adc58cb-70f8-4198-b09c-d320a2256acf",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "Inicio/menuMain"
+            },
+            "designerId": "b00e6bd2-74e5-4e68-9df3-2f75f347b13f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "record": null,
+                        "root": "items"
+                    },
+                    "designerId": "397d09f9-bc2e-4aeb-8fe4-c0144693402a"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onAjaxException",
+                        "implHandler": [
+                            "Ext.MessageBox.show({\r",
+                            "    title: 'REMOTE EXCEPTION',\r",
+                            "    msg: operation.getError(),\r",
+                            "    icon: Ext.MessageBox.ERROR,\r",
+                            "    buttons: Ext.Msg.OK\r",
+                            "});"
+                        ],
+                        "name": "exception",
+                        "scope": "me"
+                    },
+                    "designerId": "1e13f50a-b82f-45b7-aed0-00df1f48931a"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "type": "Ext.tree.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mainmenuitem",
+        "designer|userClassName": "menu.Item",
+        "height": 250,
+        "itemId": null,
+        "title": null,
+        "width": 400
+    },
+    "designerId": "fb477648-4296-43d0-a278-7bf9be74ba84",
+    "cn": [
+        {
+            "type": "Ext.tree.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "rootVisible": false
+            },
+            "designerId": "5c8d8fe0-c4af-4300-82f9-440501571ee7"
+        }
+    ]
+}

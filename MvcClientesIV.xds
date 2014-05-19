@@ -1,0 +1,61 @@
+{
+    "name": "MvcClientesIV",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "4.0.3.74",
+            "frameworkVersion": "4.2.1.883"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "3.0.3",
+    "xdsBuild": 1382,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "a705110d-4ce3-4545-a748-7f920677364e",
+            "1ee8d06e-f15c-4601-a6bc-1197be5869a1",
+            "69beb2e6-a7e1-4e95-b049-cea811522145",
+            "fb477648-4296-43d0-a278-7bf9be74ba84"
+        ],
+        "store": [
+            "df9caabf-bfb0-47ab-8b49-5fa8cd0f4d4c",
+            "1adc58cb-70f8-4198-b09c-d320a2256acf",
+            "895bb2d7-4c05-458e-984c-9610e57cf967"
+        ],
+        "controller": [
+            "756bb52b-6931-4bbc-b690-bd49d9ba7682",
+            "63c2121f-8e83-4e77-95bf-cc3611eabac0"
+        ],
+        "model": [
+            "f187b44f-7394-4960-8111-6701a0a717ff",
+            "92d36e9e-85c3-44b2-8754-514bb1184a65",
+            "61acc74d-83e5-4666-9aea-12aa314a70eb",
+            "661f65b6-7681-4e73-a8db-7b7a56cf8f5f"
+        ],
+        "resource": [
+            "78dfd286-f2d0-4843-9e8f-c71156230a59"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

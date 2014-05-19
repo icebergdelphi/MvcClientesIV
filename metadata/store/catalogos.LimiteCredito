@@ -1,0 +1,65 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "designer|userAlias": null,
+        "designer|userClassName": "catalogos.LimiteCredito",
+        "model": "catalogos.Limitecredito",
+        "storeId": "catalogos.LimiteCredito"
+    },
+    "designerId": "895bb2d7-4c05-458e-984c-9610e57cf967",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "actionMethods": [
+                    "{\r",
+                    "    read:'POST'\r",
+                    "}"
+                ],
+                "api": [
+                    "{\r",
+                    "    \r",
+                    "    read:'controller_catalogos/readLimiteCredito'\r",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "actionMethods": "object"
+            },
+            "designerId": "e61b22f5-19a0-4c5c-a3d8-8682eada5138",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "actionMethods",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null
+                    },
+                    "designerId": "1029ac5d-bbe5-4b9c-b862-f8bacb6d7411"
+                }
+            ]
+        }
+    ]
+}

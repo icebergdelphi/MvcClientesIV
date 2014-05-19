@@ -1,0 +1,317 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "clientes.Clientes",
+        "stores": [
+            "clientes.Clientes",
+            "catalogos.LimiteCredito"
+        ]
+    },
+    "designerId": "63c2121f-8e83-4e77-95bf-cc3611eabac0",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnAdd",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnAddClick",
+                "implHandler": [
+                    "StoreLimiteCredito=this.getCatalogosLimiteCreditoStore();\r",
+                    "StoreLimiteCredito.load();\r",
+                    "var FormAdd= Ext.widget('clientesCaptura');"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "fbbdce0c-5a8d-4d12-8df2-4e221d843a4d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCancelar",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnCancelarClick",
+                "implHandler": [
+                    "var win    = button.up('window');\r",
+                    "win.close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "a92cbae6-431c-49a9-9b8f-820a77479a6a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnEdit",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnEditarClick",
+                "implHandler": [
+                    "var record;\r",
+                    "var grd=this.getClientesgridClientes();\r",
+                    "records = grd.getSelectionModel().getSelection();\r",
+                    "if(records.length > 0){\r",
+                    "    var FormAddEditar= Ext.widget('clientesCaptura');\r",
+                    "    var EditForm=FormAddEditar.down('form');\r",
+                    "    var record=records[0];\r",
+                    "    EditForm.loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "967020e9-227c-400f-b9b0-713528c30daa"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "clientesgridClientes",
+                "selector": "#gridClientes"
+            },
+            "designerId": "22b6979d-ca1f-459d-afc0-ce06a5032bd4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnDelete",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnEliminarClick",
+                "implHandler": [
+                    "var grd= this.getClientesgridClientes();\r",
+                    "record =grd.getSelectionModel().getSelection();\r",
+                    "dataInfo=grd.getSelectionModel().getSelection()[0].data.Cliente;// Dato al cual se hara referencia a la eliminacion\r",
+                    "//En esta parte automaticamente el Controller crea las Funciones Getters\r",
+                    "store  = this.getClientesClientesStore();\r",
+                    "Ext.MessageBox.show({\r",
+                    "    title : 'Eliminar Registro',\r",
+                    "    buttons : Ext.MessageBox.YESNO,\r",
+                    "    msg : 'Desea Eliminar'+' '+dataInfo+'?',\r",
+                    "    icon : Ext.Msg.WARNING,\r",
+                    "    fn : function(btn)\r",
+                    "    {\r",
+                    "        if (btn == 'yes')\r",
+                    "        {\r",
+                    "            store.remove(record);          \r",
+                    "            \r",
+                    "        }\r",
+                    "        \r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "bfed6e09-75f2-49f1-b91f-b898ef1a1519"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnGuardar",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnGuardarClick",
+                "implHandler": [
+                    "var win    = button.up('window'),\r",
+                    "    form   = win.down('form'),\r",
+                    "    record = form.getRecord(),\r",
+                    "    values = form.getValues();\r",
+                    "    store  = this.getClientesClientesStore();\r",
+                    "    if (values.idcliente > 0){ //Si Hay algun Valor, entra en Modo de Actualizacion\r",
+                    "        record.set(values);\r",
+                    "        win.close();\r",
+                    "    } else{ //De Lo contrario, si la accion fue para agregar, se inserta un registro\r",
+                    "        record = Ext.create('MvcClientesIV.model.clientes.Clientes');\r",
+                    "        record.set(values);\r",
+                    "        //Validamos que todo este capturado antes de guardar\r",
+                    "        var errors = record.validate();\r",
+                    "        if(!errors.isValid()){\r",
+                    "            errors.each(function(error){\r",
+                    "                alert(\"El campo : \"+ error.field+\" debe de capturarse \");\r",
+                    "\r",
+                    "            });\r",
+                    "        }\r",
+                    "        else\r",
+                    "        {\r",
+                    "            store.add(record);\r",
+                    "            win.close();\r",
+                    "\r",
+                    "        }\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "47503d56-8b98-4121-a0b4-c0693eb854b3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#gridClientes",
+                "designer|targetType": "Ext.grid.Panel",
+                "fn": "onGridpanelItemDblClick",
+                "implHandler": [
+                    "var record;\r",
+                    "var grd=this.getClientesgridClientes();\r",
+                    "records = grd.getSelectionModel().getSelection();\r",
+                    "if(records.length > 0){\r",
+                    "    var FormAddEditar= Ext.widget('clientesCaptura');\r",
+                    "    var EditForm=FormAddEditar.down('form');\r",
+                    "    var record=records[0];\r",
+                    "    EditForm.loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "itemdblclick",
+                "scope": "me"
+            },
+            "designerId": "94b1840b-27a0-4f20-bfc8-5654841b9f00"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnImprimir",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnImprimirClick",
+                "implHandler": [
+                    "/***************************************************************************************************/\r",
+                    "/* Descomentar esta sección en el caso de que hayan tenido exito en la configuracion de JavaBridge*/\r",
+                    "/***************************************************************************************************/\r",
+                    "\r",
+                    "/*var CodigoDocto='MVC-01-Clientes';//Nombre del reporte a Generar en la salida\r",
+                    "Ext.Ajax.request({\r",
+                    "\r",
+                    "    method: 'POST',\r",
+                    "    url: '/MvcClientesIV/Php/reportes/GeneraReporteClientes.php',\r",
+                    "\r",
+                    "    params:\r",
+                    "    {\r",
+                    "        CodigoDocto:CodigoDocto\r",
+                    "\r",
+                    "    },\r",
+                    "    success: function(response,options)\r",
+                    "    {\r",
+                    "        var jsonReporte = Ext.JSON.decode(response.responseText);\r",
+                    "        Reporte=jsonReporte.Reporte;//Es necesario para indicarle que reporte es,\r",
+                    "        // y para que lo muestre en el Iframe, en caso de que tuvieran mas reportes\r",
+                    "        var Iframepanel=Ext.create('Ext.ux.SimpleIFrame', {\r",
+                    "            border: false,\r",
+                    "            src:'/MvcClientesIV/App/Reportes/Pdf/'+Reporte\r",
+                    "        });\r",
+                    "        var WinReporte=Ext.create('Ext.Window', {\r",
+                    "            title: 'Reporte de Clientes',\r",
+                    "            width: 600,\r",
+                    "            height: 500,\r",
+                    "            layout: 'fit',\r",
+                    "            modal:true,\r",
+                    "            items: Iframepanel\r",
+                    "        });\r",
+                    "\r",
+                    "        WinReporte.show();\r",
+                    "\r",
+                    "    },\r",
+                    "    failure: function ( )\r",
+                    "    {\r",
+                    "\r",
+                    "\r",
+                    "    }\r",
+                    "});\t*/\r",
+                    "\r",
+                    "/***************************************************************************************************/\r",
+                    "/* Termina seccion                                                                                 */\r",
+                    "/***************************************************************************************************/\r",
+                    "\r",
+                    "\r",
+                    "/* Test Rapido de como se verian los Reportes, ejecutando uno que ya esta predeterminado en caso de tener problemas al configurar JavaBridge*/\r",
+                    "/* En caso contrario si tienes exito en configurar JavaBridge, comentar toda esta secccion*/\r",
+                    "var Iframepanel=Ext.create('Ext.ux.SimpleIFrame', {\r",
+                    "    border: false,\r",
+                    "    src:'/MvcClientesIV/App/Reportes/Pdf/'+'MVC-01-Clientes.pdf'\r",
+                    "});\r",
+                    "var WinReporte=Ext.create('Ext.Window', {\r",
+                    "    title: 'Reporte de Clientes',\r",
+                    "    width: 600,\r",
+                    "    height: 500,\r",
+                    "    layout: 'fit',\r",
+                    "    modal:true,\r",
+                    "    items: Iframepanel\r",
+                    "});\r",
+                    "\r",
+                    "WinReporte.show();\r",
+                    "\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "031cc36b-4925-4d08-b412-e668ef5342b9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnSalirSistema",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnSalirClick",
+                "implHandler": [
+                    "Ext.Msg.confirm(\"Confirmar\",\"Desea salir de la aplicacion?\",\r",
+                    "function(btn){\r",
+                    "    if(btn === \"yes\"){\r",
+                    "        document.location = \"inicio/logout\";\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "bae44d0c-824a-40a2-b691-89beb3359825"
+        }
+    ]
+}

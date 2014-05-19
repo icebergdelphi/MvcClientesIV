@@ -1,0 +1,38 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "catalogos.Limitecredito"
+    },
+    "designerId": "661f65b6-7681-4e73-a8db-7b7a56cf8f5f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idlimite"
+            },
+            "designerId": "6c013e03-1b32-47e2-949b-9baa099befaf"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "designerId": "28c70eca-aeba-4551-b59b-1b1ffacb666f"
+        }
+    ]
+}

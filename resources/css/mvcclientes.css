@@ -1,0 +1,64 @@
+    .add{
+			background: url(../imagenes/add.png)  0px no-repeat !important;
+		 }
+
+	.edit{
+			background: url(../imagenes/edit.png)  0px no-repeat !important;
+		 }
+
+	.delete{
+			background: url(../imagenes/delete.png)  0px no-repeat !important;
+		   }
+	.clientes{
+			background: url(../imagenes/clientes.png)  0px no-repeat !important;
+		   }
+    .proveedores{
+			background: url(../imagenes/proveedores.png)  0px no-repeat !important;
+		   }		   
+	
+	
+	.aceptar{
+		   background: url(../imagenes/commit.png)  0px no-repeat !important;
+		   
+		   }
+		   
+	.cancelar{
+		   background: url(../imagenes/cancel.png)  0px no-repeat !important;
+		   
+		   }
+	.guardar{
+		   background: url(../imagenes/save.png)  0px no-repeat !important;
+		   
+		   }
+	
+	.catalogos{
+		   background: url(../imagenes/Inventario.png)  0px no-repeat !important;
+		   
+		   }
+	.movimientos{
+		   background: url(../imagenes/form.png)  0px no-repeat !important;
+		   
+		   }				   
+	.reportes{
+		   background: url(../imagenes/reportes.png)  0px no-repeat !important;
+		   
+		   }
+    .imprimir{
+		   background: url(../imagenes/print.png)  0px no-repeat !important;
+		   
+		   }
+	.tabs{
+		   background: url(../imagenes/tabs.gif)  0px no-repeat !important;
+		   
+		   }
+    .salir{
+		   background: url(../imagenes/out.png)  0px no-repeat !important;
+		   
+		   }		   
+   
+   /*Letra header */
+   .textHeader{
+		text-shadow: 4px 2px 13px rgba(220, 217, 217, 0.89);
+		color: #FFFFFF;
+		font-size: 20px;
+	}

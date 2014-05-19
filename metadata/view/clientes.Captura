@@ -1,0 +1,170 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "designer|userAlias": "clientesCaptura",
+        "designer|userClassName": "clientes.Captura",
+        "height": 194,
+        "itemId": "winCapturaClientes",
+        "layout": "fit",
+        "modal": true,
+        "title": "Captura/Ediación",
+        "width": 411
+    },
+    "designerId": "69beb2e6-a7e1-4e95-b049-cea811522145",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "itemId": "frmCapturaClientes",
+                "title": null
+            },
+            "designerId": "f6a33df4-7d73-4923-a2d1-67ffabd1c880",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Cliente",
+                        "itemId": "edtCliente",
+                        "layout|anchor": "100%",
+                        "name": "Cliente",
+                        "width": 525
+                    },
+                    "designerId": "d5a40b54-53b1-4eef-a18a-bb14246aebda"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Sexo",
+                        "itemId": "cboSexo",
+                        "layout|anchor": "100%",
+                        "name": "Sexo",
+                        "store": [
+                            "['M','F']"
+                        ]
+                    },
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "6d04d66d-c4ae-4383-b444-1d7a120b60e7"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Edad",
+                        "hideTrigger": true,
+                        "layout|anchor": "100%",
+                        "name": "Edad",
+                        "width": 400
+                    },
+                    "designerId": "5acd00ae-2c89-4dd9-85e2-0d7a01e2230d"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "itemId": "edtId",
+                        "layout|anchor": "100%",
+                        "name": "idcliente"
+                    },
+                    "designerId": "961d3876-bd9c-4048-93a6-7004cde62e52"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "descripcion",
+                        "editable": false,
+                        "fieldLabel": "Limite de Credito",
+                        "layout|anchor": "100%",
+                        "name": "id_limitecredito",
+                        "store": "catalogos.LimiteCredito",
+                        "valueField": "idlimite"
+                    },
+                    "designerId": "d954f6f3-7178-45ab-91ee-746114f5f30c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "end",
+                "dock": "bottom"
+            },
+            "designerId": "19436a60-8172-4d30-8dbb-1323f7aea586",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "guardar",
+                        "itemId": "btnGuardar",
+                        "layout|flex": null,
+                        "text": "Guardar"
+                    },
+                    "designerId": "19583099-020e-4d83-87ff-93d2774de5d7"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "cancelar",
+                        "itemId": "btnCancelar",
+                        "layout|flex": null,
+                        "text": "Cancelar"
+                    },
+                    "designerId": "d27bf373-b678-4093-8bf2-94def5c4878b"
+                }
+            ]
+        }
+    ]
+}
