@@ -31,8 +31,6 @@ Ext.application({
     ],
     views: [
         'MainView',
-        'clientes.gridClientes',
-        'clientes.Captura',
         'menu.Item'
     ],
     controllers: [

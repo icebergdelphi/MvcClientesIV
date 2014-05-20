@@ -10,6 +10,10 @@
         "stores": [
             "clientes.Clientes",
             "catalogos.LimiteCredito"
+        ],
+        "views": [
+            "clientes.gridClientes",
+            "clientes.Captura"
         ]
     },
     "designerId": "63c2121f-8e83-4e77-95bf-cc3611eabac0",
@@ -312,6 +316,30 @@
                 "scope": "me"
             },
             "designerId": "bae44d0c-824a-40a2-b691-89beb3359825"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#gridClientes",
+                "designer|targetType": "Ext.grid.Panel",
+                "fn": "onGrdClienteslBeforeRender",
+                "implHandler": [
+                    "//Cargamos los stores a peticion\r",
+                    "StoreClientes=this.getClientesClientesStore();\r",
+                    "StoreLimiteCredito=this.getCatalogosLimiteCreditoStore();\r",
+                    "StoreLimiteCredito.load();\r",
+                    "StoreClientes.load();\r",
+                    ""
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "designerId": "40d2f85b-2d69-4490-ad56-0f551f772237"
         }
     ]
 }

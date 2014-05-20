@@ -20,6 +20,10 @@ Ext.define('MvcClientesIV.controller.clientes.Clientes', {
         'clientes.Clientes',
         'catalogos.LimiteCredito'
     ],
+    views: [
+        'clientes.gridClientes',
+        'clientes.Captura'
+    ],
 
     refs: [
         {
@@ -194,6 +198,15 @@ Ext.define('MvcClientesIV.controller.clientes.Clientes', {
         });
     },
 
+    onGrdClienteslBeforeRender: function(component, eOpts) {
+        //Cargamos los stores a peticion
+        StoreClientes=this.getClientesClientesStore();
+        StoreLimiteCredito=this.getCatalogosLimiteCreditoStore();
+        StoreLimiteCredito.load();
+        StoreClientes.load();
+
+    },
+
     init: function(application) {
         this.control({
             "#btnAdd": {
@@ -212,7 +225,8 @@ Ext.define('MvcClientesIV.controller.clientes.Clientes', {
                 click: this.onBtnGuardarClick
             },
             "#gridClientes": {
-                itemdblclick: this.onGridpanelItemDblClick
+                itemdblclick: this.onGridpanelItemDblClick,
+                beforerender: this.onGrdClienteslBeforeRender
             },
             "#btnImprimir": {
                 click: this.onBtnImprimirClick

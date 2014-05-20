@@ -26,7 +26,7 @@ Ext.define('MvcClientesIV.store.catalogos.LimiteCredito', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            autoLoad: false,
             autoSync: true,
             model: 'MvcClientesIV.model.catalogos.Limitecredito',
             storeId: 'catalogos.LimiteCredito',

@@ -17,8 +17,6 @@
         ],
         "views": [
             "MainView",
-            "clientes.gridClientes",
-            "clientes.Captura",
             "menu.Item"
         ]
     },

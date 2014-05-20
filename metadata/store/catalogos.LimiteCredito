@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoLoad": true,
+        "autoLoad": false,
         "autoSync": true,
         "designer|userAlias": null,
         "designer|userClassName": "catalogos.LimiteCredito",
