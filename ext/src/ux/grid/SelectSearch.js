@@ -411,7 +411,9 @@ Ext.define('Ext.ux.grid.SelectSearch', {
                     });
                 }
             }
-            
+            //01/06/2014 Clear all after search,because we do not want anything load in memory.
+	    delete(store.proxy.extraParams[this.paramNames.fields]);
+            delete(store.proxy.extraParams[this.paramNames.query]);
             this.fireEvent('search', this, store, val); 
         }
     },
