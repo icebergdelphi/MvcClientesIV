@@ -205,9 +205,9 @@ Ext.define('Ext.ux.grid.SelectSearch', {
     onRender:function() {
         var panel = this.toolbarContainer || this.grid;
         //var tb = 'bottom' === this.position ? panel.bottomToolbar : panel.topToolbar;
-
         //finds the toolbar that matches inte specified position in the 
         //docked items
+		
         var docked = panel.getDockedItems();
         for (var i = 0; i < docked.length; i++) {
             if (docked[i].dock == this.positionDock && docked[i].componentCls == 'x-toolbar') {
@@ -316,6 +316,7 @@ Ext.define('Ext.ux.grid.SelectSearch', {
         if (tb.displayInfo) {
             tb.add('->',tb.displayItem);
         }
+		
 
     },
             
@@ -411,6 +412,9 @@ Ext.define('Ext.ux.grid.SelectSearch', {
                     });
                 }
             }
+			//01/06/2014 Clear all after search,because we do not want anything load in memory.
+			delete(store.proxy.extraParams[this.paramNames.fields]);
+            delete(store.proxy.extraParams[this.paramNames.query]);
             
             this.fireEvent('search', this, store, val); 
         }
