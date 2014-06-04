@@ -58,7 +58,7 @@ class Inicio extends CI_Controller{
    }
    
   
-   	//Building the menu..Creando el Menu
+  //Building the menu..Creando el Menu
   function menuMain()
 	{
 	    $session_data = $this->session->userdata('logged_in');
