@@ -412,10 +412,16 @@ Ext.define('Ext.ux.grid.SelectSearch', {
                     });
                 }
             }
+<<<<<<< HEAD
 			//01/06/2014 Clear all after search,because we do not want anything load in memory.
 			delete(store.proxy.extraParams[this.paramNames.fields]);
             delete(store.proxy.extraParams[this.paramNames.query]);
             
+=======
+            //01/06/2014 Clear all after search,because we do not want anything load in memory.
+	    delete(store.proxy.extraParams[this.paramNames.fields]);
+            delete(store.proxy.extraParams[this.paramNames.query]);
+>>>>>>> fac2f59cb718c27887dcf2e897f2156ea0c1368c
             this.fireEvent('search', this, store, val); 
         }
     },
